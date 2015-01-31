@@ -1,0 +1,409 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 02.12.2014., 20:43:28
+    Author     : Denis
+*/
+@import 'bourbon/bourbon';
+@import '../icons/fontello.css';
+
+
+$font:    Open Sans, sans;
+$icon-fonts: fontello;
+$primary-color: #333;
+$bg-color: white;
+$bpos-a: relative;
+$bpos-b: absolute;
+$bpos-c: fixed;
+$hide: none;
+$visib: hidden;
+$box-shadow:  0px 1px 20px -1px rgba(50, 50, 50, 0.22);
+$in-shadow: inset 0px 3px 2px -2px rgba(0, 0, 0, 0.25);
+@mixin box-shadow($box-shadow, $in-shadow){
+    @include prefixer(box-shadow, $box-shadow, $in-shadow,  webkit moz ms o spec);
+}
+/************************************/
+            /*HTML*/
+/************************************/
+$html-w: 100%;
+$html-h: 100%;
+html {     
+    width: $html-w;
+    height: $html-h;
+}
+/************************************/
+            /*BODY*/
+/************************************/
+$body-p: 0;
+$body-m: auto;
+$body-w: 100%;
+$body-h: 100%;
+$body-color: white;
+body {
+  font: 100% $font;
+  color: $primary-color;
+  position: $bpos-a;
+  width: $body-w;
+  height: $body-h;
+  padding: $body-p;
+  margin: $body-m;  
+}
+/************************************/
+            /*POPUP*/
+/************************************/
+$box-display: block;
+$box-w: 450px;
+$box-h: auto;
+$box-bg-color: white;
+$box-pos: absolute;
+$box-top: 25%;
+$box-left: 50%;
+$box-right: 50%;
+$box-border: 1px solid rgba(50, 50, 50, 0.22);
+$box-radius: 3px;
+$box-font: fontello;
+@mixin box-shadow($box-shadow){
+    @include prefixer(box-shadow, $box-shadow,  webkit moz ms o spec);
+}
+
+#popup {
+ 
+    display: $box-display;
+    width: $box-w;
+    height: $box-h;
+    position: $box-pos;
+    top: $box-top;
+    left: $box-left;
+    right: $box-right;
+    border: $box-border;
+    border-radius: $box-radius;
+    @include transform(translate(-50%, 0));
+    @include prefixer(box-shadow, $box-shadow,  webkit moz ms o spec);  
+}
+
+$pw-pos: absolute;
+$pw-left: 50%;
+$pw-bottom: -6%;
+.popuparrow{
+    position: $pw-pos;
+    left: $pw-left;
+    bottom: $pw-bottom;
+}
+
+$pw-content: '\e802';
+$pw-font-s: 2em;
+$pw-f-color: whitesmoke;
+$pw-shadow-a: 0px 2px 3px rgba(50, 50, 50, 0.22);
+$pw-shadow-b: 0px 2px 3px rgba(50, 50, 50, 0.22);
+@mixin text-shadow($pw-shadow-b){
+    @include prefixer(text-shadow, $pw-shadow-b,  webkit moz ms o spec);
+}
+.popuparrow:after{
+    content: $pw-content;
+    font-family: $icon-fonts;
+    font-size: $pw-font-s;
+    color: $pw-f-color;
+    @include prefixer(text-shadow, $pw-shadow-b,  webkit moz ms o spec);
+}
+/************************************/
+           /*IN POPUP*/
+       /* Gen Info & shit*/
+/************************************/
+$info-w: auto;
+$info-h: auto;
+$info-margin: 0.5em 2em 1.5em 2em;
+$info-display: inline-block;
+$info-over: hidden;
+
+.bookinginfo, .guest, .buttons{
+   width: $info-w;
+   height: $info-h;
+   margin: $info-margin;
+   overflow: $info-over;
+}
+
+$ginfo-display: inline-block;
+$ginfo-margin: 0.5em 0 0 0;
+$left: left;
+$right: right;
+
+.generalinfo, .about {
+    float: $left;
+    margin: $ginfo-margin;
+}
+
+$f-name-size: 1em;
+.name {
+    font-size: $f-name-size;
+}
+$f-size: 1.75em;
+$f-weight: 400;
+
+.date {
+    font-family:  $font;
+    font-size: $f-size;
+    font-weight: $f-weight; 
+}
+$fp-size: 0.9em;
+$fp-weight: 300;
+$fp-color: rgb(170, 170, 170);
+$fp-inline: inline;
+$fp-line-h: 0.5em;
+$txt-right: right;
+$txt-left: left;
+$txt-center: center;
+
+.chkin, 
+.peps, 
+.loag, 
+.ukasu,
+.chktxt,
+.email,
+.country,
+.phone,
+textarea[placeholder]
+{
+   font-family: $font;
+   font-size: $fp-size;
+   font-weight: $fp-weight;
+   color: $fp-color;
+   display: $fp-inline;
+   line-height: $fp-line-h;
+}
+
+$f-chk: 1em;
+.chktxt {
+    font-size: $f-chk;
+}
+$till-margin: 0 -0.2 0 0.1em;
+.till{
+    margin: $till-margin;
+}
+$booked-info: 0 0.5em 0.5em;;
+ .separator, p span.valuta {
+    margin: $booked-info;
+}
+$todo-margin: 1.7em 0 0 0;
+$todo-w: 33%;
+$todo-h: auto;
+
+.isbooked, .from {
+    width: $todo-w;
+    height: $todo-h;
+    margin: $todo-margin;
+    float: $right;
+    text-align: $right;
+    overflow: hidden;
+}
+$from-margin: 0.5em 0 0 0;
+.from {
+    margin: $from-margin;
+}
+/************************************/
+       /* END IN POP UP*/
+/************************************/
+/************************************/
+        /*RADIO BOXES STYLING*/
+/************************************/
+input[type=radio]{
+    display: $hide;
+}
+.rounded {
+    
+}
+$l-pointer: pointer;
+$l-padding: 0 32px 0 0;
+$line-h: 20px;
+$l-size: 1em;
+$l-color: #222;
+$l-margin:0 0 10px 0;
+ label {
+    cursor: $l-pointer;
+    position: $bpos-a;
+    padding: $l-padding;
+    display: $info-display;
+    font-size: $l-size;
+    font-weight: $fp-weight;
+    line-height: $line-h;
+    margin: $l-margin;
+    color: $l-color;   
+}
+
+/*$l-bg-round: white; ako jest potrebna pozadinska boja po želji */
+$l-br-style: 2px solid rgba(50, 50, 50, 0.22);
+$l-content-1: '';
+$l-f-color: green;
+$l-f-size: 16px;
+$f-weight: normal;
+$l-right-chk: 0;
+$l-top-chk: 0;
+$l-bottom-chk: 1px;
+$l-w: 20px;
+$l-h: 20px;
+  label:after {
+    content: $l-content-1;
+    font-weight: $f-weight;
+    position: $bpos-b;
+    display: $info-display;
+    top: $l-top-chk;
+    right: $l-right-chk;
+    bottom: $l-bottom-chk; 
+    width: $l-w;
+    height: $l-h;
+    border: $l-br-style;
+    @include prefixer(box-shadow, $in-shadow,  webkit moz ms o spec);
+}
+$l-br-radius-: 50px;
+.rounded label:after{
+    border-radius: $l-br-radius-;
+}
+  $content: '\2022';
+  $l-f-color: rgb(111, 201, 111);
+  $l-f-size: 47px;
+input[type=radio]:checked + label:after {
+      content: $content;
+      color: $l-f-color;
+      font-size: $l-f-size;
+      text-align: $txt-center;
+  }
+/************************************/
+     /*END RADIO BOX STYLING*/
+/************************************/
+/************************************/
+           /*TEXTAREA*/
+/************************************/
+$text-m: 1em 2em 0 2em;
+$text-font: 0.9em;
+.addnotes {
+    margin: $text-m;
+}
+$text-height: auto;
+$text-border: none;
+$outline: none;
+$text-padding: 0.5em;
+$none: none; 
+
+textarea[placeholder] {
+    width: $body-w;
+    height: $text-height;
+    border: $text-border;
+    overflow: auto;
+    outline: $outline;
+    font-family: $font;
+    resize: $none;
+    font-size: $text-font;
+    text-align: $txt-left;
+    line-height: 1em;
+}
+/************************************/
+           /*END TEXTAREA*/
+/************************************/
+/************************************/
+           /*STYLING BUTTONS*/
+/************************************/
+$button-a: 58px;
+$button-m: 0 0 0 0;
+$button-bg: rgba(243, 243, 243, 0.45);
+$wipe: 0;
+@mixin padding-start($wipe){
+    @include prefixer(padding-start, $wipe, webkit moz ms o);
+    
+}
+section.buttons{
+    min-height: $button-a;
+    margin:  $button-m;
+    background: $button-bg;
+    text-align: $txt-center;
+}
+$remove: none;
+$aligment: 19px 0 0 34px;
+$padding-start: 0;
+$inline: inline;
+ul {
+    list-style: $remove;
+    @include prefixer(padding-start, $wipe, webkit moz ms o spec);
+}
+ul > li {
+    display: $inline;
+    margin: $aligment; 
+}
+
+$content-cog: '\e804';
+$ico-m:2px 0 0 -24px;
+$ico-size: 1.10em;
+$ico-color-a: rgb(106, 186, 255);
+$ico-color-b: rgb(232, 17, 17);
+li > span.cog-icon:before {
+    font-family: $icon-fonts;
+    content: $content-cog;
+    margin: $ico-m;
+    font-size: $ico-size;
+    color: $ico-color-a;
+    position: $bpos-b;
+    @include transform(rotate(21deg));
+}
+$content-ico-1: '\e803';
+li > span.inov-icon:before {
+    font-family: $icon-fonts;
+    content: $content-ico-1;
+    margin: $ico-m;
+    font-size: $ico-size;
+    color: $ico-color-a;
+    position: $bpos-b;
+}
+$content-ico-2: '\e800';
+li > span.delete-icon:before {
+    font-family: $icon-fonts;
+    content: $content-ico-2;
+    margin: $ico-m;
+    font-size: $ico-size;
+    color: $ico-color-b;
+    position: $bpos-b;
+}
+/*************************************/
+        /* vert borders */
+/************************************/
+$box-border-v: 1px solid rgba(50, 50, 50, 0.04);
+$ver-w: 63px;
+$ver-m: 0 -5px 0 10px;
+.vert-right {
+  width:  $ver-w;
+  margin: $ver-m;
+  display: $info-display;
+  border: $box-border-v;
+  @include transform(rotate(90deg));
+}
+.vert-left {
+  width: $ver-w;
+  margin: $ver-m;
+  border: $box-border-v;
+  display: $info-display;
+  @include transform(rotate(90deg));
+}
+/************************************/
+        /*END STYLING BUTTONS*/
+/************************************/
+/************************************/
+        /* STYLING LINKS */
+/************************************/
+$underline-none: none;
+$a-color: inherit;
+
+a {
+    text-decoration: $underline-none;
+    color: $a-color;
+}
+/***********************************/
+        /*END STYLING LINKS */
+/**********************************/
+
+$bor-w: 100%;
+$hr-bor:1px solid rgba(0, 0, 0, 0.04);
+.break {
+     width: $bor-w;
+     border: $hr-bor;
+     margin: 0;
+}

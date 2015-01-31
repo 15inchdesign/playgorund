@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Zadatak</title>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- //  CSS & FONTS  -->
+        <link rel="stylesheet" type="text/css" href="css/style.css" /> 
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300,700' rel='stylesheet' type='text/css' />
+    </head>
+    <body>
+        <div id="popup">
+            <section class="bookinginfo">
+                <div class="generalinfo">
+                    <header class="date">08.11.<span class="till">-</span> 08.11.</header>
+                    <div class="boked">
+                        <p class="chkin">10 Nights <span class="separator">/</span>2 adults <span class="separator">/</span>2 children</p>
+                        <br />
+                        <p class="ukasu">2.000,00<span class="valuta">EUR</span>(200,00 per night)</p>
+                    </div>
+                </div>
+                <div class="isbooked">
+                    <form action="">
+                        <div class="rounded">
+                            <input type="radio" id="rounded-1" name="todo" value="agree" checked />
+                            <label for="rounded-1">Confirmed</label>
+                            <input type="radio" id="rounded-2" name="todo" value="disagree" />
+                            <label  for="rounded-2">Option</label>
+                        </div>
+                    </form>
+                </div>                
+            </section>
+            <hr class="break"/>
+            <section class="guest">
+                <div class="about">
+                    <header class="name">Marko Željkić</header>
+                    <p class="email">Mario@nesto.com</p>
+
+                </div>
+                <div class="from">        
+                    <p class="country">Croatia (Hrvatska)</p><br />
+                    <p class="phone">+(385) 91 521 7334</p>
+                </div>                
+            </section>
+            <hr class="break" />
+            <section class="addnotes"> 
+                <textarea placeholder="Ovdje ide bilješka" cols="30" rows="2"></textarea>                                  
+            </section>
+            <hr class="break" />
+            <section class="buttons"> 
+                <ul class="action_buttons">
+                    <li><span class="cog-icon"></span><a href="#">Edit</a><hr class="vert-right" /></li>
+                    <li><span class="inov-icon"></span><a href ="#">Inovice</a><hr class="vert-left" /></li>
+                    <li><span class="delete-icon"></span><a href ="#">Delete</a></li>
+                </ul>                              
+            </section>
+            <div class="popuparrow"></div>
+        </div>
+    </body>
+</html>
