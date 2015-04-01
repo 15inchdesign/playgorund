@@ -1,5 +1,5 @@
-zadatak
+Modal window
 =======
 
-zadatak za posao
+Testiranje SASS + Burbona(prefix-vendors)
 
