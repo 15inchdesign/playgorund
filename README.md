@@ -1,5 +1,5 @@
 Modal window
 =======
 
-Testiranje SASS + Burbona(prefix-vendors)
+Testiranje SASS + Bourbon(prefix-vendors)
 
